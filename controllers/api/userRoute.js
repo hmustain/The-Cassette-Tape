@@ -4,21 +4,20 @@ const { User } = require("../../models");
 // post new user
 router.post("/", async (req, res) => {
   try {
-    const { email, password, firstName, lastName } = req.body;
-    if (!email || !password || !firstName || !lastName) {
+    const { email, password, name } = req.body;
+    if (!email || !password || !name) {
       return res.status(400).json({ message: "All fields are required" });
     }
     const existingUser = await User.findOne({ where: { email } });
     if (existingUser) {
       return res.status(400).json({ message: "User already exists" });
     }
-    const hashedPassword = await bcrypt.hash(password, 12);
     const userData = await User.create({
       email,
-      password: hashedPassword,
-      firstName,
-      lastName,
+      password,
+      name
     });
+
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
