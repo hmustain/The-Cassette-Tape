@@ -1,4 +1,4 @@
-const router = require ('express').Router();
+const router = require('express').Router();
 const { Event } = require('../../models');
 
 // GET all event
@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
         const events = await Event.findAll();
         res.json(events);
     } catch (err) {
-        res.status(500).json({ message: "Error (500) cannot perform GET request"});
+        res.status(500).json({ message: "Error (500) cannot perform GET request" });
     }
 });
 
@@ -16,11 +16,11 @@ router.get('/:id', async (req, res) => {
     try {
         const event = await Event.findByPk(req.params.id);
         if (!event) {
-            return res.status(404).json({ message: "Event not found"});
+            return res.status(404).json({ message: "Event not found" });
         }
         res.json(event);
     } catch (err) {
-        res.status(500).json({ message: "Error (500) cannot perform GET request"});
+        res.status(500).json({ message: "Error (500) cannot perform GET request" });
     }
 });
 
@@ -30,7 +30,7 @@ router.post('/', async (req, res) => {
         const newEvent = await Event.create(req.body);
         res.json(newEvent);
     } catch (err) {
-        res.status(500).json({ message: "Error (500) cannot perform POST request"});
+        res.status(500).json({ message: "Error (500) cannot perform POST request" });
     }
 });
 
@@ -43,10 +43,29 @@ router.put('/:id', async (req, res) => {
             },
         });
         if (!updateEvent[0]) {
-            return res.status(404).json({ message: "Event not found"});
+            return res.status(404).json({ message: "Event not found" });
         }
         res.json(updateEvent);
     } catch (err) {
-        res.status(500).json({ message: "Error (500) cannot perform PUT request"});
+        res.status(500).json({ message: "Error (500) cannot perform PUT request" });
     }
 });
+
+// DELETE event by ID
+router.delete('/:id', async (req, res) => {
+    try {
+        const deleteEvent = await Event.destroy({
+            where: {
+                id: req.params.id,
+            },
+        });
+        if (!deleteEvent) {
+            return res.status(404).json({ message: "Event not found" });
+        }
+        res.json({ message: "Event deleted" });
+    } catch (err) {
+        res.status(500).json({ message: "Error (500) cannot perform DEL request" });
+    }
+});
+
+module.exports = router;
