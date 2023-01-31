@@ -1,14 +1,14 @@
-const User = require('./User');
-const Event = require('./Event');
-const userEvent = require('./userEvent');
+const User = require("./User");
+const Event = require("./Event");
+const UserEvent = require("./UserEvent");
 
 User.hasMany(Event, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE',
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
 });
 
 Event.belongsToMany(User, {
-    foreignKey: 'user_id',
+  foreignKey: "user_id",
 });
 
-module.exports = { User, Event, userEvent };
+module.exports = { User, Event, UserEvent };
