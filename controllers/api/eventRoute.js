@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Event } = require('../../models');
+const { create } = require('../../models/user');
 
 // GET all event
 router.get('/', async (req, res) => {
@@ -27,12 +28,18 @@ router.get('/:id', async (req, res) => {
 // POST a new event
 router.post('/', async (req, res) => {
     try {
-        const newEvent = await Event.create(req.body);
+        const { name, starting_date, ending_date, description, created_by } = req.body;
+        if (!name || !starting_date || !ending_date || !description || !created_by) {
+            return res.status(400).json({ message: "All fields are required" });
+        }
+
+        const newEvent = await Event.create({ name, starting_date, ending_date, description, created_by });
         res.json(newEvent);
     } catch (err) {
         res.status(500).json({ message: "Error (500) cannot perform POST request" });
     }
 });
+
 
 // PUT (update) an existing event
 router.put('/:id', async (req, res) => {

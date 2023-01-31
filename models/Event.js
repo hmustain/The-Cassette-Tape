@@ -7,25 +7,25 @@ Event.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allownull: false,
+      autoIncrement: true,
       primaryKey: true,
     },
     name: {
       type: DataTypes.STRING,
-      allownull: false,
+      allowNull: false,
     },
     starting_date: {
       type: DataTypes.DATE,
-      allownull: true,
+      allowNull: true,
     },
     ending_date: {
       type: DataTypes.DATE,
-      allownull: true,
+      allowNull: true,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
-    createdBy: {
+    created_by: {
       type: DataTypes.INTEGER,
       references: {
         model: "user",

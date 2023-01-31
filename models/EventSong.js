@@ -13,7 +13,7 @@ EventSong.init(
     event_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "user",
+        model: "event",
         key: "id",
       },
     },
