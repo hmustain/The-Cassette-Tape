@@ -25,22 +25,35 @@ const api = new spotifyApi({
 router.get("/", async (req, res) => {
     try {
         console.log("Search route hit")
-      const data = await api.clientCredentialsGrant();
-      api.setAccessToken(data.body.access_token);
-      console.log("Request body:", req.body);
-      const query = req.body.q;
-      if (!query) {
-        res.status(400).json({ message: "Search query 'q' is missing" });
-        return;
-      }
-      const searchResult = await api.searchTracks(query);
-      const tracks = searchResult.body.tracks.items;
-      res.json({ tracks: tracks.slice(0, req.body.limit || tracks.length) });
+        const data = await api.clientCredentialsGrant();
+        api.setAccessToken(data.body.access_token);
+
+        const query = req.body.q;
+        const type = req.body.type || "track";
+        const limit = req.body.limit || 10;
+
+        if (!query) {
+            return res.status(400).json({ message: "Search query 'q' is missing" });
+        }
+
+        const searchResult = await api.searchTracks(query, { type, limit });
+        const tracks = searchResult.body.tracks.items;
+        
+        const filteredTracks = tracks.map(track => ({
+            artist: track.artists[0].name,
+            album: track.album.name,
+            track: track.name,
+            albumPhoto: track.album.images[0].url,
+            preview: track.preview_url
+        }));
+        
+        res.json({ tracks: filteredTracks });
     } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: "Failed to retrieve tracks", error });
+        console.error(error);
+        res.status(500).json({ message: "Failed to retrieve tracks", error });
     }
-  });
+});
+
   
 
 module.exports = router;
