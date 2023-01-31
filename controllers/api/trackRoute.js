@@ -35,7 +35,7 @@ router.get("/", async (req, res) => {
       }
       const searchResult = await api.searchTracks(query);
       const tracks = searchResult.body.tracks.items;
-      res.json({ tracks });
+      res.json({ tracks: tracks.slice(0, req.body.limit || tracks.length) });
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: "Failed to retrieve tracks", error });
