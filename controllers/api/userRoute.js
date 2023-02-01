@@ -37,7 +37,7 @@ router.post("/login", async (req, res) => {
     if (!email || !password) {
       return res.status(400).json({ message: "All fields are required" });
     }
-    const userData = await User.findOne({ where: { email } });
+    const userData = await User.findOne({ where: { email: req.body.email } });
     if (!userData) {
       return res
         .status(400)
