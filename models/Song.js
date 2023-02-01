@@ -7,7 +7,7 @@ Song.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allownull: false,
+      autoIncrement: true,
       primaryKey: true,
     },
     playlist_id: {
@@ -18,7 +18,7 @@ Song.init(
       },
     },
     song_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
     },
   },
   {

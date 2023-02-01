@@ -4,8 +4,8 @@ const { User } = require("../../models");
 // post new user
 router.post("/", async (req, res) => {
   try {
-    const { email, password, name } = req.body;
-    if (!email || !password || !name) {
+    const { email, password, name, role } = req.body;
+    if (!email || !password || !name || !role) {
       return res.status(400).json({ message: "All fields are required" });
     }
     const existingUser = await User.findOne({ where: { email } });
@@ -15,7 +15,8 @@ router.post("/", async (req, res) => {
     const userData = await User.create({
       email,
       password,
-      name
+      name,
+      role
     });
 
     req.session.save(() => {
