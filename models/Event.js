@@ -26,11 +26,7 @@ Event.init(
       type: DataTypes.TEXT,
     },
     created_by: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "user",
-        key: "id",
-      },
+      type: DataTypes.STRING,
     },
   },
   {

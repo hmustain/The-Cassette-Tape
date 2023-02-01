@@ -39,22 +39,23 @@ router.get('/:id', async (req, res) => {
 
 // POST a new event
 router.post('/', async (req, res) => {
-    try {
-        const { name, starting_date, ending_date, description, created_by } = req.body;
-        if (!name || !starting_date || !ending_date || !description || !created_by) {
+    // try {
+        const { eventInput, startDate, endDate, description } = req.body;
+        if (!eventInput || !startDate || !endDate || !description ) {
             return res.status(400).json({ message: "All fields are required" });
         }
 
-        const newEvent = await Event.create({ name, starting_date, ending_date, description, created_by });
+        const newEvent = await Event.create({ name: eventInput, starting_date: startDate, ending_date: endDate, description, created_by: req.session.userName
+        });
 
         const newPlaylist = await Playlist.create({
             event_id: newEvent.id
         });
 
         res.json(newEvent);
-    } catch (err) {
-        res.status(500).json({ message: "Error (500) cannot perform POST request" });
-    }
+    // } catch (err) {
+    //     res.status(500).json({ message: "Error (500) cannot perform POST request" });
+    // }
 });
 
 
