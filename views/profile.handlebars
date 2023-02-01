@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-auto">
+    <h2 class="greeting">Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<div class="add-event-container"></div>
+    <h3 class="create">Create a New Event Playlist</h3>
+
+  <form class="new-event-form">
+      <label for="event_name">
+      Event Name:
+      </label>
+      <br />
+      <textarea id="event_name" name="event_name" rows="2" cols="30">
+    
+    </textarea>
+      <br />
+      <label for="description">
+        Description:
+      </label>
+      <br />
+      <textarea id="description" name="description" rows="5" cols="30">
+  
+    </textarea>
+  
+   <br />
+   <button type="submit" value="Submit" class="btn btn-outline-secondary">
+        Create
+      </button>
+
+  {{#if events.length}}
+  <div class="col-md-6 events-list text-white">
+    <h3>Created Events:</h3>
+    
+
+    {{#each events as |event|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/project/{{event.id}}">{{event.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{event.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="../public/js/profile.js"></script>
