@@ -7,7 +7,7 @@ Playlist.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allownull: false,
+      autoIncrement: true,
       primaryKey: true,
     },
     event_id: {

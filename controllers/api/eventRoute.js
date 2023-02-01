@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Event } = require('../../models');
+const { Event, Playlist } = require('../../models');
 const { create } = require('../../models/user');
 
 // GET all event
@@ -10,6 +10,18 @@ router.get('/', async (req, res) => {
     } catch (err) {
         res.status(500).json({ message: "Error (500) cannot perform GET request" });
     }
+});
+
+router.get('/test', async (req, res) => {
+  
+    //stuff to test and return data on
+    const newEvent = await Event.create({ name: 'Wedding', starting_date: "2023-07-17T00:00:00.000Z", ending_date: "2023-07-17T00:00:00.000Z", description: 'Something', created_by: 4 });
+
+    const newPlaylist = await Playlist.create({
+        event_id: newEvent.id
+    });
+
+    res.json(newPlaylist);
 });
 
 // GET event by :ID
@@ -34,6 +46,11 @@ router.post('/', async (req, res) => {
         }
 
         const newEvent = await Event.create({ name, starting_date, ending_date, description, created_by });
+
+        const newPlaylist = await Playlist.create({
+            event_id: newEvent.id
+        });
+
         res.json(newEvent);
     } catch (err) {
         res.status(500).json({ message: "Error (500) cannot perform POST request" });

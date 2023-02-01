@@ -2,21 +2,25 @@
   {
     "name": "Hunter",
     "email": "Mustain@hotmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "role": "Host"
   },
   {
     "name": "Vanessa",
     "email": "Mendez@aol.com",
-    "password": "password12345"
+    "password": "password12345",
+    "role": "Host"
   },
   {
     "name": "Clarence",
     "email": "Givens@gmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "role": "guest"
   },
   {
     "name": "Kyre",
     "email": "Seven@outlook.com",
-    "password": "password12345"
+    "password": "password12345",
+    "role": "guest"
   }
 ]

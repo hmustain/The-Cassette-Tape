@@ -23,10 +23,6 @@ Song.belongsTo(Playlist, {
   foreignKey: "playlist_id",
 });
 
-Event.hasOne(Playlist, {
-  foreignKey: "playlist_id",
-});
-
 Playlist.belongsTo(Event, {
   foreignKey: "event_id",
 });
