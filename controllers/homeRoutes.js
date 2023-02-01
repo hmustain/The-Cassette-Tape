@@ -76,7 +76,7 @@ router.get('/', async (req, res) => {
   // Use withAuth middleware to redirect authenticated users to the dashboard
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/dashboard');
+    res.redirect('/');
     return;
   }
   res.render('login');
