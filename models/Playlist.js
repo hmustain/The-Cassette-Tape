@@ -7,7 +7,7 @@ Playlist.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allownull: false,
+      autoIncrement: true,
       primaryKey: true,
     },
     event_id: {
@@ -20,7 +20,7 @@ Playlist.init(
     esong_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: "eventsong",
+            model: "song",
             key: "id",
         },
     },
