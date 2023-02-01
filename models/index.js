@@ -1,7 +1,7 @@
 const User = require("./User");
 const Event = require("./Event");
 const UserEvent = require("./UserEvent");
-const EventSong = require("./EventSong");
+const Song = require("./Song");
 const Playlist = require("./Playlist");
 
 User.belongsToMany(Event, {
@@ -15,11 +15,11 @@ Event.belongsToMany(User, {
   foreignKey: "event_id",
 });
 
-Playlist.hasMany(EventSong, {
+Playlist.hasMany(Song, {
   foreignKey: "esong_id",
 });
 
-EventSong.belongsTo(Playlist, {
+Song.belongsTo(Playlist, {
   foreignKey: "playlist_id",
 });
 
@@ -32,4 +32,4 @@ Playlist.belongsTo(Event, {
 });
 
 
-module.exports = { User, Event, UserEvent, EventSong, Playlist };
+module.exports = { User, Event, UserEvent, Song, Playlist };
