@@ -1,0 +1,14 @@
+<section class="container mx-auto">
+  <h3 class="dashboard-name">{{event.name}}</h3>
+  <!-- If the user is logged in, render the gallery content -->
+  {{#if loggedIn}}
+  <section class="flex-row justify-center">
+    {{#each event.songs as |song|}}
+    {{> song-details}}
+    {{/each}}
+  </section>
+</section>
+<!-- Otherwise, provide a link to login -->
+{{else}}
+<a href="/login">You must login first to view this page</a>
+{{/if}}
