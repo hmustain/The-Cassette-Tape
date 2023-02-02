@@ -1,6 +1,5 @@
 
 
-
 *:before,
 *:after{
     padding: 0;
@@ -89,10 +88,7 @@ h1{
                                                 
 }
 
-.main-nav{
-  color: #fff;
-  text-align: right;
-}
+
 .container {
   display: flex;
   flex-flow: column wrap;
