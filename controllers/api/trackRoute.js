@@ -34,9 +34,9 @@ router.get("/search", async (req, res) => {
         }).then(data => data.json());
         console.log(trackInfo);
         // defining const for query, type, and limit w/ the last 2 having defaults incase the user doesn't submit info
-        const query = req.body.q;
-        const type = req.body.type || "track";
-        const limit = req.body.limit || 10;
+        const query = req.query.q;
+        const type = req.query.type || "track";
+        const limit = req.query.limit || 10;
         // if no query entered return error
         if (!query) {
             return res.status(400).json({ message: "Search query 'q' is missing" });
