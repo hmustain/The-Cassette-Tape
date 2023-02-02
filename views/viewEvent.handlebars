@@ -1,18 +1,34 @@
 <div>
     <div>
-    <h3>{{event.name}} Event Name</h3>
-    <p>{{event.description}} Event Description</p>
-    <p>{{event.starting_date}} Start Date / End Date {{event.ending_date}}</p>
-    <p>{{event.created_by}} Created By</p>
+        <h3>{{event.name}} Event Name</h3>
+        <p>{{event.description}} Event Description</p>
+        <p>{{event.starting_date}} Start Date / End Date {{event.ending_date}}</p>
+        <p>{{event.created_by}} Created By</p>
     </div>
     <div>
         <h2>Add A Song</h2>
-<label for="track">Search</label>
-<input type="text" id="track-q">
-<label for="track">Type</label>
-<input type="text" id="track-type">
-<label for="track">Limit</label>
-<input type="text" id="track-limit">
-<button id="create">Search</button>
+        <label for="track">Search</label>
+        <input type="text" id="track-q">
+        <label for="track">Type</label>
+        <input type="text" id="track-type">
+        <label for="track">Limit</label>
+        <input type="text" id="track-limit">
+        <button id="search">Search</button>
+    </div>
+    <div>
+        <h2>Songs</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Song Name</th>
+                    <th>Artist</th>
+                    <th>Album</th>
+                    <th>Preview</th>
+                </tr>
+            </thead>
+            <tbody id="songs-table-body">
+            </tbody>
+        </table>
     </div>
 </div>
+<script src="/js/searchTracks.js"></script>
