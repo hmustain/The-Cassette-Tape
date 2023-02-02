@@ -73,6 +73,20 @@ router.get('/', async (req, res) => {
     // }
   });
 
+  // view event by id page 
+  router.get('/events/:id', async (req, res) => {
+    try {
+      const event = await Event.findByPk(req.params.id);
+      if (!event) {
+        return res.status(404).json({ message: "Event not found" });
+      }
+      res.render('viewEvent', { event });
+    } catch (err) {
+      res.status(500).json({ message: "Error (500) cannot perform GET request" });
+    }
+  });
+  
+
   // Use withAuth middleware to redirect authenticated users to the dashboard
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
@@ -82,10 +96,10 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// redirect to the post new event page
 router.get('/event', (req, res) => {
   res.render('event');
 });
-
 
 
   router.get('/signup', async (req, res) => {
