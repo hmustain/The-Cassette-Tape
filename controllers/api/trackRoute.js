@@ -47,7 +47,7 @@ router.get("/search", async (req, res) => {
         // maps over the array of tracks and for each track creates a new object with desired properties artist name, album name, track name, album photo, track preview
         const filteredTracks = tracks.map(track => ({
             song_id: track.id,
-            artist: track.artists.name,
+            artist: track.artists[0].name,
             album: track.album.name,
             track: track.name,
             albumPhoto: track.album.images[0].url,
