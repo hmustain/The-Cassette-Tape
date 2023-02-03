@@ -28,7 +28,7 @@
           <img src="/images/event-tape.png" class="card-img-top" alt="cassette">
           <div class="card-body">
             <h5 class="card-title"><a href="/events/{{event.id}}">{{event.name}}</a></h5>
-            <p>Created by: {{event.createdBy}}</p>
+            <p>Created by: {{event.created_by}}</p>
             <p><time>{{event.starting_date}}</time> - <time>{{event.ending_date}}</time></time></p>
             <p class="card-text">{{event.description}}</p>
            
@@ -37,8 +37,8 @@
                 <li class="list-group-item">{{> song-details}}<a href="#" class="btn btn-dark btn-small">delete</a></li>
                 {{/each}}
             </ul>
-            <a href="#" class="submit btn btn-primary">add a song</a>
-            <div>
+            <a href="/events/{{event.id}}" class="submit btn btn-primary">add a song</a>
+            {{!-- <div>
               <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
                 <div class="d-flex flex-wrap flex-start">
                   <div class="form-outline ">
@@ -61,7 +61,7 @@
               <div id="comment-box" value="submit">
 
               </div>
-            </div>
+            </div> --}}
           </div>
         </div>
       </div>

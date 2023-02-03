@@ -35,7 +35,7 @@ router.get('/:id', async (req, res) => {
 
 // POST a new event
 router.post('/', async (req, res) => {
-    // try {
+    try {
         const { eventInput, startDate, endDate, description } = req.body;
         if (!eventInput || !startDate || !endDate || !description ) {
             return res.status(400).json({ message: "All fields are required" });
@@ -45,9 +45,9 @@ router.post('/', async (req, res) => {
         });
 
         res.json(newEvent);
-    // } catch (err) {
-    //     res.status(500).json({ message: "Error (500) cannot perform POST request" });
-    // }
+    } catch (err) {
+        res.status(500).json({ message: "Error (500) cannot perform POST request" });
+    }
 });
 
 

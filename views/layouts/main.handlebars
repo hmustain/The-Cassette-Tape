@@ -29,25 +29,29 @@
         <!-- Icons -->
         <ul class="navbar-nav d-flex flex-row me-1">
             <li class="nav-item me-3 me-lg-0">
-                <a class="nav-link text-white" href="#"><i class="fas fa-home mx-1"></i>Home</a>
+                <a class="nav-link text-white" href="/events"><i class="fas fa-home mx-1"></i>Home</a>
             </li>
             <li class="nav-item me-3 me-lg-0">
                 <a class="nav-link text-white" href="/events"><i class="fas fa-book mx-1"></i> Events</a>
             </li>
-            <li class="nav-item dropdown">
+                        <li class="nav-item me-3 me-lg-0">
+                <a class="nav-link text-white" href="/add"><i class="fas fa-book mx-1"></i> Add Event</a>
+            </li>
+            {{!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
                 data-mdb-toggle="dropdown" aria-expanded="false"> <i class="fas fa-user mx-1"></i> Profile </a>
                 <!-- Dropdown menu -->
                 <ul class="dropdown-menu dropdown-menu-end bg-white " aria-labelledby="navbarDropdown">
                     <li>
                         <a class="dropdown-item " href="/profile.handlebars">My account</a>
-                    </li>
+                    </li> --}}
 
-                    <li> 
-                       {{#if loggedIn}}
-                        <a class="dropdown-item" >Log out</a>
+                    <li class="nav-item me-3 me-lg-0"> 
+                       {{#if logged_in}}
+                        <a class="nav-link text-white" 
+                        id="logout" >Log out</a>
                            {{else}}
-                    <a href="../login.handlebars">Login</a>
+                    <a class="nav-link text-white" href="/login">Login</a>
                         {{/if}}
                     </li>
                 </ul>

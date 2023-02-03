@@ -6,7 +6,7 @@ const eventCreate = async (event) => {
     const endDate = document.querySelector('#end-date').value.trim();
     const description = document.querySelector('#description').value.trim();
   
-    alert(eventInput)
+    // alert(eventInput)
 
     if (eventInput && startDate && endDate && description) {
       const response = await fetch('/api/events', {
@@ -16,7 +16,7 @@ const eventCreate = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/events');
       } else {
         alert('Failed to sign up.');
       }
