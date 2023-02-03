@@ -1,19 +1,24 @@
-// Prepared data relating to the id relationship of users and events
+
 [
   {
     "user_id": 1,
-    "event_id": 1
+    "event_id": 1,
+    "song_id": "1"
   },
   {
     "user_id": 2,
-    "event_id": 1
+    "event_id": 1,
+    "song_id": 1
   },
   {
     "user_id": 3,
-    "event_id": 2
+    "event_id": 2,
+    "song_id": 1
+
   },
   {
     "user_id": 4,
-    "event_id": 3
+    "event_id": 3,
+    "song_id": 1
   }
 ]
