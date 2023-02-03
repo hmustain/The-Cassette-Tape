@@ -1,11 +1,97 @@
-<h2>Create an Event</h2>
-<label for="Event">Event</label>
-<input type="text" id="event-input">
-<label for="Event">Start Date</label>
-<input type="text" id="start-date">
-<label for="Event">End Date</label>
-<input type="text" id="end-date">
-<label for="Event">Description</label>
-<textarea name="" id="description" cols="30" rows="10"></textarea>
-<button id="create">Create</button>
-<script src="/js/event.js"></script>
+{{!-- <div class="container-fluid">
+  <div class="row content">
+    <div class="col-md-3">
+      <div class="form-group d-flex flex-wrap row justify-start">
+        <form>
+          <h2 class="text-white">Create an Event</h2>
+          <label class="text-white" for="Event">Event Name</label>
+          <input type="text" id="event-input">
+          <label class="text-white" for="Event">Start Date</label>
+          <input type="text" id="start-date">
+          <label class="text-white" for="Event">End Date</label>
+          <input type="text" id="end-date">
+          <label class="text-white" for="Event">Description</label>
+          <textarea class="flex-wrap" name="" id="description" cols="45" rows="10"></textarea>
+          <button class="btn btn-primary" id="create">Create</button>
+        </form>
+      </div>
+    </div> --}}
+
+  {{#if logged_in}}
+  <div>
+    {{#each events as |event|}}
+    <section class="container mx-auto">
+      <div class="col-md-2 flex float-right">
+      <div class="col">
+        <div class="event-card" style="width: 30rem;">
+
+          <img src="/images/event-tape.png" class="card-img-top" alt="cassette">
+          <div class="card-body">
+            <h5 class="card-title"><a href="/events/{{event.id}}">{{event.name}}</a></h5>
+            <p>Created by: {{event.createdBy}}</p>
+            <p><time>{{event.starting_date}}</time> - <time>{{event.ending_date}}</time></time></p>
+            <p class="card-text">{{event.description}}</p>
+           
+            <ul class="list-group" id="song-list">
+              {{#each event.songs as |song|}}
+                <li class="list-group-item">{{> song-details}}<a href="#" class="btn btn-dark btn-small">delete</a></li>
+                {{/each}}
+            </ul>
+            <a href="#" class="submit btn btn-primary">add a song</a>
+            <div>
+              <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
+                <div class="d-flex flex-wrap flex-start">
+                  <div class="form-outline ">
+                    <textarea class="form-control" id="commentBox" rows="4" style="background: #fff;"></textarea>
+                    <label class="form-label" for="commentBox">Leave a Comment</label>
+                  </div>
+                </div>
+                <div class="float-end mt-2 pt-1">
+                  <button type="button" class="btn btn-primary btn-sm">
+                    Post comment
+                  </button>
+
+                </div>
+              </div>
+
+
+            </div>
+            <div class="comments">
+              <h2 class=" text-white"> Comments</h2>
+              <div id="comment-box" value="submit">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      {{!-- <h3 class="dashboard-name"> <a href="events/{{event.id}}">{{event.name}}</a></h3>
+      <p>{{event.description}}</p>
+      <p>{{event.starting_date}}{{event.ending_date}}</p>
+      <p>{{event.created_by}}</p>
+      <!-- If the user is logged in, render the gallery content -->
+      {{#if loggedIn}}
+      <section class="flex-row justify-center">
+        {{#each event.songs as |song|}}
+        {{> song-details}}
+        {{/each}}
+      </section>
+    </section>
+    <!-- Otherwise, provide a link to login -->
+    {{else}}
+    <a href="/login">You must login first to view this page</a>
+    {{/if}} --}}
+    {{/each}}
+
+
+    
+  
+  </div>
+   {{else}}
+    <a href="/login">You must login first to view this page</a>
+  {{/if}}
+
+
+  <script src="/js/event.js"></script>

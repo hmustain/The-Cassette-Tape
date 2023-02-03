@@ -8,19 +8,19 @@ const signupFormHandler = async (event) => {
   
     if (name && email && role && password) {
       console.log(name, email, role);
-      const response = await fetch('/api/users', {
+      const response = await fetch('/api/users/signup', {
         method: 'POST',
         body: JSON.stringify({ name, email, role, password }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/events');
       } else {
         alert('Failed to sign up.');
       }
     }
   };
   document
-  .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);
+  .querySelector('#signup-form')
+  .addEventListener('click', signupFormHandler);
