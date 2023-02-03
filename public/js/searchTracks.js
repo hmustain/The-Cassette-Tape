@@ -41,6 +41,7 @@ function displayTracks(tracks) {
           <td>${track.album ? track.album : ""}</td>
           <td><img src=${track.albumPhoto} /></td>
           <td>${track.preview}</td>
+          <td><button class="add-button">Add</button></td>
         `;
     });
   };
