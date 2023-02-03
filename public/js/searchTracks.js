@@ -34,24 +34,14 @@ function displayTracks(tracks) {
     tracks.forEach(track => {
       const trackItem = document.createElement("tr");
       console.log("trackItem:", trackItem);
-      let albumImage = "";
-      let artistNames = "";
-      if (track.album && track.album.images.length) {
-        albumImage = track.album.images[0].url;
-      }
-      if (track.artists.length) {
-        artistNames = track.artists.map(artist => artist.name).join(", ");
-      }
-      trackItem.innerHTML = `
-          <td>${track.name}</td>
-          <td>${artistNames}</td>
-          <td>${track.album ? track.album.name : ""}</td>
-          <td><img src=${albumImage} /></td>
-          <td>${track.preview_url}</td>
-        `;
-        console.log("before append:", trackList.innerHTML);
         trackList.appendChild(trackItem);
-        console.log("after append:", trackList.innerHTML);        
+              trackItem.innerHTML = `
+          <td>${track.track}</td>
+          <td>${track.artist}</td>
+          <td>${track.album ? track.album : ""}</td>
+          <td><img src=${track.albumPhoto} /></td>
+          <td>${track.preview}</td>
+        `;
     });
   };
   
