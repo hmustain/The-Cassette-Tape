@@ -107,6 +107,11 @@ router.get('/event', (req, res) => {
   res.render('event');
 });
 
+router.get("/add", (req, res) => {
+  res.render("addEvent");
+});
+
+
   router.get('/signup', async (req, res) => {
     try {
       // Pass serialized data and session flag into template
