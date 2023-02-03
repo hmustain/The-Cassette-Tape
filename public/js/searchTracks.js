@@ -43,8 +43,41 @@ function displayTracks(tracks) {
           <td><a href="${track.preview}" target="_blank">Preview</a></td>
           <td><button class="add-button">Add</button></td>
         `;
+
+    //   const addButton = trackItem.querySelector(".add-button");
+    //   addButton.addEventListener("click", async function() {
+    //     // Add the track to the event here
+    //     try {
+    //       const eventId = document.getElementById("event-id").value;
+    //       const response = await fetch(`http://localhost:3001/api/events/${eventId}/songs`, {
+    //         method: "POST",
+    //         headers: { "Content-Type": "application/json" },
+    //         body: JSON.stringify({
+    //           track: track.track,
+    //           artist: track.artist,
+    //           album: track.album,
+    //           albumPhoto: track.albumPhoto,
+    //           preview: track.preview
+    //         })
+    //       });
+    //       const data = await response.json();
+    //       console.log(data);
+    //       // Update the song list in the HTML to reflect the added track
+    //       const songList = document.getElementById("song-list");
+    //       const newSong = document.createElement("li");
+    //       newSong.innerHTML = `
+    //         <p>Track: ${data.track}</p>
+    //         <p>Artist: ${data.artist}</p>
+    //         <p>Album: ${data.album}</p>
+    //         <img src="${data.albumPhoto}" alt="${data.album} album cover">
+    //         <audio src="${data.preview}" controls></audio>
+    //       `;
+    //       songList.appendChild(newSong);
+    //     } catch (error) {
+    //       console.error(error);
+    //     }
+    //   });
     });
   };
-  
 
 document.querySelector('#search').addEventListener('click', searchTracks);
