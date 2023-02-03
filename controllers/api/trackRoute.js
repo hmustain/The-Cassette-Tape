@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const spotifyApi = require('spotify-web-api-node');
-const { Event, Playlist, Song } = require('../../models');
+const { Event, Song } = require('../../models');
 
 
 const api = new spotifyApi({
@@ -73,17 +73,6 @@ router.post('/', async (req, res) => {
             }
         })
             .then(data => data[0].id);
-
-        const playlist = await Playlist.findOrCreate({
-            where: {
-                event_id: eventId,
-            }
-            ,
-            defaults: {
-                event_id: eventId,
-                song_id: song
-            }
-        });
 
         res.json({ message: 'Song added to event' });
 

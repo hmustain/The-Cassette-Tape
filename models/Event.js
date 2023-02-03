@@ -3,6 +3,7 @@ const sequelize = require("../config/connection");
 
 class Event extends Model {}
 
+// Model creation for Events
 Event.init(
   {
     id: {
@@ -37,4 +38,5 @@ Event.init(
   }
 );
 
+// Creating the keyword that links this model to other files.
 module.exports = Event;

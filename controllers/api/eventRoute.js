@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Event, Playlist } = require('../../models');
+const { Event } = require('../../models');
 const { create } = require('../../models/user');
 
 // GET all event
@@ -17,11 +17,7 @@ router.get('/test', async (req, res) => {
     //stuff to test and return data on
     const newEvent = await Event.create({ name: 'Wedding', starting_date: "2023-07-17T00:00:00.000Z", ending_date: "2023-07-17T00:00:00.000Z", description: 'Something', created_by: 4 });
 
-    const newPlaylist = await Playlist.create({
-        event_id: newEvent.id
-    });
-
-    res.json(newPlaylist);
+    res.json(newEvent);
 });
 
 // GET event by :ID
@@ -46,10 +42,6 @@ router.post('/', async (req, res) => {
         }
 
         const newEvent = await Event.create({ name: eventInput, starting_date: startDate, ending_date: endDate, description, created_by: req.session.userName
-        });
-
-        const newPlaylist = await Playlist.create({
-            event_id: newEvent.id
         });
 
         res.json(newEvent);
