@@ -25,19 +25,19 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
        
-          <input type="email" id="defaultForm-email" class="form-control validate" placeholder="Email">
-          <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+          <input type="email" id="email-login" class="form-control validate" placeholder="Email">
+          <label data-error="wrong" data-success="right" for="email-login">Your email</label>
         </div>
 
         <div class="md-form mb-4">
           
-          <input type="password" id="defaultForm-pass" class="form-control validate"placeholder="Password">
-          <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+          <input type="password" id="password-login" class="form-control validate"placeholder="Password">
+          <label data-error="wrong" data-success="right" for="password-login">Your password</label>
         </div>
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-secondary">Login</button>
+        <button class="btn btn-secondary" id="login-form">Login</button>
       </div>
     </div>
   </div>
@@ -60,24 +60,30 @@
       <div class="modal-body ">
         <div class="md-form ">
           <i class="fas fa-user prefix grey-text"></i>
-          <input type="text" id="signUp-name" class="form-control validate" placeholder="Enter your name">
-          <label data-error="wrong" data-success="right" for="signUp-name">Your name</label>
+          <input type="text" id="username-signup" class="form-control validate" placeholder="Enter your name">
+          <label data-error="wrong" data-success="right" for="username-signup">Your name</label>
         </div>
         <div class="md-form">
           <i class="fas fa-envelope prefix grey-text"></i>
-          <input type="email" id="signUp-email" class="form-control validate" placeholder="Email">
-          <label data-error="wrong" data-success="right" for="signUp-email">Your email</label>
+          <input type="email" id="email-signup" class="form-control validate" placeholder="Email">
+          <label data-error="wrong" data-success="right" for="email-signup">Your email</label>
         </div>
 
         <div class="md-form">
           <i class="fas fa-lock prefix grey-text"></i>
-          <input type="password" id="orangeForm-pass" class="form-control validate" placeholder="Password">
-          <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label>
+          <input type="password" id="password-signup" class="form-control validate" placeholder="Password">
+          <label data-error="wrong" data-success="right" for="password-signup">Your password</label>
+        </div>
+
+       <div class="md-form">
+          <i class="fas fa-lock prefix grey-text"></i>
+          <input type="text" id="user-role" class="form-control validate" placeholder="Role">
+          <label data-error="wrong" data-success="right" for="user-role">User Role</label>
         </div>
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-secondary">Sign up</button>
+        <button class="btn btn-secondary" id="signup-form">Sign up</button>
       </div>
     </div>
   </div>
@@ -89,7 +95,7 @@
 
 <!-- events -->
 
-            <a id="viewEvents" class="btn btn-outline-light btn-lg m-2" href="./event.handlebars"
+            <a id="viewEvents" class="btn btn-outline-light btn-lg m-2" href=""
             target="_blank" role="button">View Events</a>
           
         </div>
@@ -100,7 +106,8 @@
  
 
 
-
+<script src="/js/signup.js"></script>
+<script src="/js/login.js"></script>
 
 
 
