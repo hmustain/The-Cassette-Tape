@@ -73,7 +73,6 @@ router.get('/', async (req, res) => {
     // }
   });
 
-<<<<<<< Updated upstream
   // view event by id page 
   router.get('/events/:id', async (req, res) => {
     try {
@@ -88,8 +87,6 @@ router.get('/', async (req, res) => {
   });
   
 
-=======
->>>>>>> Stashed changes
   // Use withAuth middleware to redirect authenticated users to the dashboard
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
@@ -99,19 +96,11 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-<<<<<<< Updated upstream
 // redirect to the post new event page
-=======
->>>>>>> Stashed changes
 router.get('/event', (req, res) => {
   res.render('event');
 });
 
-
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
   router.get('/signup', async (req, res) => {
     try {
       // Pass serialized data and session flag into template
