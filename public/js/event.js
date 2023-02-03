@@ -24,4 +24,10 @@ const eventCreate = async (event) => {
   };
   document
   .querySelector('#create')
+<<<<<<< Updated upstream
   .addEventListener('click', eventCreate);
+=======
+  .addEventListener('click', eventCreate);
+
+
+>>>>>>> Stashed changes

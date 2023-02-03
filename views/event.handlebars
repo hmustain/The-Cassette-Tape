@@ -1,62 +1,67 @@
-<div class="row row-cols-1 row-cols-md-2 g-4">
-  <div class="col">
-<div class="event-card" style="width: 18rem;">
- 
-  <img src="/images/event-tape.png" class="card-img-top" alt="cassette">
-  <div class="card-body">
-    <h5 class="card-title">Event Name</h5>
-    <p class="card-text">description of the event</p>
-    <ul class="list-group" id="song-list">
-  <li class="list-group-item">Cras justo odio<a href="#" class="btn btn-dark btn-small">delete</a></li>
-
-</ul>
-    <a href="#" class="submit btn btn-primary">add a song</a>
-
-
-</div>
-</div>
-</div>
-
-
-  <div class="col">
-<div class="event-card" style="width: 18rem;">
- 
-  <img src="/images/event-tape.png" class="card-img-top" alt="cassette">
-  <div class="card-body">
-    <h5 class="card-title">Event Name</h5>
-    <p class="card-text">description of the event</p>
-    <ul class="list-group" id="song-list">
-  <li class="list-group-item">Cras justo odio<a href="#" class="btn btn-dark btn-small">delete</a></li>
-
-</ul>
-    <a href="#" class="submit btn btn-primary">add a song</a>
-  </div>
-</div>
-</div>
-  <div class="col">
-<div class="event-card" style="width: 18rem;">
- 
-  <img src="/images/event-tape.png" class="card-img-top" alt="cassette">
-  <div class="card-body">
-    <h5 class="card-title">Event Name</h5>
-    <p class="card-text">description of the event</p>
-    <ul class="list-group" id="song-list">
-  <li class="list-group-item">Cras justo odio<a href="#" class="btn btn-dark btn-small">delete</a></li>
-
-</ul>
-    <a href="#" class="submit btn btn-primary">add a song</a>
-  </div>
-</div>
-</div>
-</div>
-<h2>Create an Event</h2>
-<label for="Event">Event</label>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-md-3">
+  <div class = "form-group d-flex flex-wrap row justify-start">
+    <form>
+<h2 class="text-white">Create an Event</h2>
+<label class="text-white" for="Event">Event Name</label>
 <input type="text" id="event-input">
-<label for="Event">Start Date</label>
+<label class="text-white" for="Event">Start Date</label>
 <input type="text" id="start-date">
-<label for="Event">End Date</label>
+<label class="text-white" for="Event">End Date</label>
 <input type="text" id="end-date">
-<label for="Event">Description</label>
-<textarea name="" id="description" cols="30" rows="10"></textarea>
-<button id="create">Create</button>
+<label class="text-white" for="Event">Description</label>
+<textarea class="flex-wrap" name="" id="description" cols="45" rows="10"></textarea>
+<button class="btn btn-primary" id="create">Create</button>
+</form>
+</div>
+</div>
+
+
+<div class="col-md-2 flex float-right">
+  <div class="col">
+<div class="event-card" style="width: 30rem;">
+ 
+  <img src="/images/event-tape.png" class="card-img-top" alt="cassette">
+  <div class="card-body">
+    <h5 class="card-title">Event Name</h5>
+    <p class="card-text">description of the event</p>
+    <ul class="list-group" id="song-list">
+  <li class="list-group-item">Cras justo odio<a href="#" class="btn btn-dark btn-small">delete</a></li>
+
+</ul>
+    <a href="#" class="submit btn btn-primary">add a song</a>
+        <div>
+     <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
+            <div class="d-flex flex-wrap flex-start">
+              <div class="form-outline ">
+                <textarea class="form-control" id="commentBox" rows="4"
+                  style="background: #fff;"></textarea>
+                <label class="form-label" for="commentBox">Leave a Comment</label>
+              </div>
+            </div>
+            <div class="float-end mt-2 pt-1">
+              <button type="button" class="btn btn-primary btn-sm">
+                Post comment
+              </button>
+             
+              </div>
+            </div>
+
+
+</div>
+ <div class="comments">
+                <h2 class=" text-white"> Comments</h2>
+              <div id="comment-box" value="submit">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
 <script src="/js/event.js"></script>
+
