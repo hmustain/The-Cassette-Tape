@@ -16,7 +16,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/',function(req,res) {
-    res.render('event');
+    res.render('homepage');
   });
 
 //add the router
