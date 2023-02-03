@@ -3,11 +3,13 @@ const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 class User extends Model {
+  // requires a login processes for users.
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
+// model creation for User
 User.init(
   {
     id: {
@@ -42,6 +44,7 @@ User.init(
   },
   {
     hooks: {
+      // specifies the minimum character count of the password required for creating a new user.
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
@@ -55,4 +58,5 @@ User.init(
   }
 );
 
+// links User model to other files
 module.exports = User;

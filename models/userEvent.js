@@ -1,8 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class UserEvent extends Model {}
+class UserEvent extends Model { }
 
+// model creation for UserEvent
 UserEvent.init(
   {
     id: {
@@ -24,6 +25,13 @@ UserEvent.init(
         key: "id",
       },
     },
+    esong_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "song",
+        key: "id",
+      },
+    },
   },
   {
     sequelize,
@@ -33,4 +41,5 @@ UserEvent.init(
   }
 );
 
+// links the model to other files
 module.exports = UserEvent;
