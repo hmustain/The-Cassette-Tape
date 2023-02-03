@@ -40,7 +40,7 @@ function displayTracks(tracks) {
           <td>${track.artist}</td>
           <td>${track.album ? track.album : ""}</td>
           <td><img src=${track.albumPhoto} /></td>
-          <td>${track.preview}</td>
+          <td><a href="${track.preview}" target="_blank">Preview</a></td>
           <td><button class="add-button">Add</button></td>
         `;
     });

@@ -50,7 +50,7 @@ router.get("/search", async (req, res) => {
             artist: track.artists[0].name,
             album: track.album.name,
             track: track.name,
-            albumPhoto: track.album.images[0].url,
+            albumPhoto: track.album.images[1].url,
             preview: track.preview_url
         }));
         //  if good response return the const filtered tracks in json format else return error
