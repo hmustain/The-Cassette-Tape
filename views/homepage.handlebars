@@ -1,7 +1,7 @@
 {{#each events as |event|}}
 <section class="container mx-auto">
 
-  <h3 class="dashboard-name"> <a href="{{event.id}}">{{event.name}}</a></h3>
+  <h3 class="dashboard-name"> <a href="events/{{event.id}}">{{event.name}}</a></h3>
   <p>{{event.description}}</p>
   <p>{{event.starting_date}}{{event.ending_date}}</p>
   <p>{{event.created_by}}</p>
