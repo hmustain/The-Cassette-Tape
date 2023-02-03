@@ -1,3 +1,4 @@
+{{!-- 
 {{#each events as |event|}}
 <section class="container mx-auto">
 
@@ -17,4 +18,120 @@
 {{else}}
 <a href="/login">You must login first to view this page</a>
 {{/if}}
-{{/each}}
+{{/each}} --}}
+
+<!-- Background image -->
+  <div id="intro-example" class=" text-center bg-image 100vh "
+    style= "background-image: url('https://images.squarespace-cdn.com/content/v1/5c90fe2eaf468307c83acde2/1616684232053-GU6I3Z04BSMLJP1KQA00/FxrrfXjSxtGnXRAtsvMy8d0QANeB2XYL1614285845.jpg');height: 100vh;">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);height: 100vh;">
+    <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h2 class="mb-3">Welcome</h2>
+          <h5 class="mb-4">
+            Create Events and let your guests be the DJ
+          </h5>
+          
+   <!-- sign in modal popup -->
+  <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 text-dark font-weight-bold">Sign in</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+       
+          <input type="email" id="email-login" class="form-control validate" placeholder="Email">
+          <label data-error="wrong" data-success="right" for="email-login">Your email</label>
+        </div>
+
+        <div class="md-form mb-4">
+          
+          <input type="password" id="password-login" class="form-control validate"placeholder="Password">
+          <label data-error="wrong" data-success="right" for="password-login">Your password</label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-secondary" id="login-form">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a class="btn btn-outline-light btn-lg m-2" href="./login.handlebars"
+  role="button" rel="nofollow" target="_blank" data-toggle="modal" data-target="#modalLoginForm">Sign in</a>
+
+<!-- sign up modal popup -->
+<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 text-dark font-weight-bold">Sign up</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body ">
+        <div class="md-form ">
+          <i class="fas fa-user prefix grey-text"></i>
+          <input type="text" id="username-signup" class="form-control validate" placeholder="Enter your name">
+          <label data-error="wrong" data-success="right" for="username-signup">Your name</label>
+        </div>
+        <div class="md-form">
+          <i class="fas fa-envelope prefix grey-text"></i>
+          <input type="email" id="email-signup" class="form-control validate" placeholder="Email">
+          <label data-error="wrong" data-success="right" for="email-signup">Your email</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fas fa-lock prefix grey-text"></i>
+          <input type="password" id="password-signup" class="form-control validate" placeholder="Password">
+          <label data-error="wrong" data-success="right" for="password-signup">Your password</label>
+        </div>
+
+       <div class="md-form">
+          <i class="fas fa-lock prefix grey-text"></i>
+          <input type="text" id="user-role" class="form-control validate" placeholder="Role">
+          <label data-error="wrong" data-success="right" for="user-role">User Role</label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-secondary" id="signup-form">Sign up</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <a class="btn btn-outline-light btn-lg m-2" href="./signUp.handlebars"
+            target="_blank" role="button" data-toggle="modal" data-target="#modalRegisterForm">Sign Up</a>
+
+
+<!-- events -->
+
+            {{!-- <a id="viewEvents" class="btn btn-outline-light btn-lg m-2" href=""
+            target="_blank" role="button">View Events</a> --}}
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+ 
+
+
+<script src="/js/signup.js"></script>
+<script src="/js/login.js"></script>
+
+
+
+
+
+

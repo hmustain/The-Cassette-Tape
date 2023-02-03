@@ -2,8 +2,13 @@ const router = require('express').Router();
 const { Event, User, UserEvent, Playlist } = require('../models');
 // const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
-    // try {
+
+router.get('/', (req, res) => {
+  res.render('homepage');
+})
+
+router.get('/events', async (req, res) => {
+    // try {  
       // Get all projects and JOIN with user data
       const eventData = await Event.findAll({
         include: [
@@ -62,7 +67,7 @@ router.get('/', async (req, res) => {
       // Pass serialized data and session flag into template
     //   res.json(events);
     console.log(events)
-      res.render('homepage', { 
+      res.render('event', { 
         // events,
         events: events,
         // loggedIn: true
@@ -75,6 +80,7 @@ router.get('/', async (req, res) => {
 
   // view event by id page 
   router.get('/events/:id', async (req, res) => {
+    console.log
     try {
       const event = await Event.findByPk(req.params.id);
       if (!event) {
@@ -100,7 +106,6 @@ router.get('/login', (req, res) => {
 router.get('/event', (req, res) => {
   res.render('event');
 });
-
 
   router.get('/signup', async (req, res) => {
     try {

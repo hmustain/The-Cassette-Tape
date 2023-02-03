@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { User } = require("../../models");
 
 // post new user
-router.post("/", async (req, res) => {
+router.post("/signup", async (req, res) => {
   try {
     const { email, password, name, role } = req.body;
     if (!email || !password || !name || !role) {
@@ -12,6 +12,7 @@ router.post("/", async (req, res) => {
     if (existingUser) {
       return res.status(400).json({ message: "User already exists" });
     }
+    console.log('past checking user');
     const userData = await User.create({
       email,
       password,
