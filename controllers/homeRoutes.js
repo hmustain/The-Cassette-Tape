@@ -13,7 +13,7 @@ router.get('/events', async (req, res) => {
       const eventData = await Event.findAll({
         include: [
           {
-            model: User, through: UserEvent, as: "user_events", 
+            model: User, through: UserEvent, as: "event_users", 
             attributes: ['name'],
           },
         ],
