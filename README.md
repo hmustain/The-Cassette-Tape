@@ -2,16 +2,22 @@
 
 ## Description
 
+A web application that allows guests to sign up and view events to go to. Once in the event, the guest can suggest songs to add to a playlist for a particular event so that other guests can listen to their songs.
+
 ## User Story
+
+```
+- AS A GUEST when I attend an Event
+- I WANT to be able to suggest songs to a playlist
+- SO THAT my music can be heard by other attendees.
+```
 
 ## Table of Contents
 - [Description](#description)
 - [User Story](#user-story)
 - [Table of Contents](#table-of-contents)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Contributions](#contributions)
-- [Questions](#questions)
 
 ## Installation
 
@@ -37,8 +43,6 @@ Follow the steps below for first time installation:
 
 `npm i spotify-web-api-node`
 
-## Usage
-
 ## Contributions
 [Hunter Mustain](https://github.com/hmustain)
 
@@ -46,4 +50,3 @@ Follow the steps below for first time installation:
 
 [Clarence Givens](https://github.com/ThinkK1ng)
 
-## Questions
