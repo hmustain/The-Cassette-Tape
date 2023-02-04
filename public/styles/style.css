@@ -87,28 +87,29 @@ h1{
   font-family: 'Graffiti font', sans-serif;
                                                 
 }
-
-
-.container {
-  display: flex;
-  flex-flow: column wrap;
-  align-content: center;
-  align-items: center;
-}
-.event-card {
+.add-event-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+   
+  }
+/* .event-card {
   margin: 20px;
   flex: 0 1 300px;
   padding: 5px;
   width: 35%;
-  min-height: 100%;
   min-width: 35%;
-  border: 3px solid ;
-  border-style: solid;
-  border-width: medium;
   background-color: grey;
-  color: black;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+.event-container{
+ display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    max-height: 200vh; 
+} */
 .greeting, .create{
   color:#fff
 }
