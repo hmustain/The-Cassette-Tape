@@ -17,16 +17,14 @@
       </div>
     </div> --}}
 
-  {{#if logged_in}}
-  <div>
+<div class="card-group">
+   {{#if logged_in}}
     {{#each events as |event|}}
-    
-<div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col">
-    <div class="event-card card">
+  <div class="event-container event-card text-white bg-dark m-3" style="width: 18rem;">
 
           <img src="/images/event-tape.png" class="card-img-top" alt="cassette">
           <div class="card-body">
+            
             <h5 class="card-title font-weight-bold"><a href="/events/{{event.id}}" class="bg-primary text-white">{{event.name}}</a></h5>
             <p>Created by: {{event.created_by}}</p>
             <p><time>{{event.starting_date}}</time> - <time>{{event.ending_date}}</time></time></p>
@@ -62,11 +60,11 @@
 
               </div>
             </div> --}}
-        </div>
-      </div>
-    </div>
+  
 </div>
-</div>
+ </div>
+
+
       {{!-- <h3 class="dashboard-name"> <a href="events/{{event.id}}">{{event.name}}</a></h3>
       <p>{{event.description}}</p>
       <p>{{event.starting_date}}{{event.ending_date}}</p>
@@ -90,7 +88,7 @@
   
   </div>
    {{else}}
-    <a class="d-flex justify-content-center align-items-center" href="/login">You must login first to view this page</a>
+    <a class="justify-content-center align-items-center" href="/login">You must login first to view this page</a>
   {{/if}}
 
 

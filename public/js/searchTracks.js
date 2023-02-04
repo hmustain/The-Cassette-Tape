@@ -39,9 +39,9 @@ function displayTracks(tracks) {
           <td>${track.track}</td>
           <td>${track.artist}</td>
           <td>${track.album ? track.album : ""}</td>
-          <td><img src=${track.albumPhoto} /></td>
+          <td><img class= "img-thumbnail" src=${track.albumPhoto} /></td>
           <td><a href="${track.preview}" target="_blank">Preview</a></td>
-          <td><button class="add-button">Add</button></td>
+          <td><button class="add-button btn-primary">Add</button></td>
         `;
 
     //   const addButton = trackItem.querySelector(".add-button");
