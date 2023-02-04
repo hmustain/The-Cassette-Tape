@@ -87,15 +87,14 @@ h1{
   font-family: 'Graffiti font', sans-serif;
                                                 
 }
-
-
 .container {
-  display: flex;
-  flex-flow: column wrap;
-  align-content: center;
-  align-items: center;
-}
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    align-items: center;
+  }
 .event-card {
+
   margin: 20px;
   flex: 0 1 300px;
   padding: 5px;
