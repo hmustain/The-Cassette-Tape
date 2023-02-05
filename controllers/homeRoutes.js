@@ -80,17 +80,20 @@ router.get('/events', async (req, res) => {
 
   // view event by id page 
   router.get('/events/:id', async (req, res) => {
-    console.log
     try {
       const event = await Event.findByPk(req.params.id);
       if (!event) {
         return res.status(404).json({ message: "Event not found" });
       }
-      res.render('viewEvent', { event });
+  
+      res.render('viewEvent', { 
+        event: event.dataValues 
+      });
     } catch (err) {
       res.status(500).json({ message: "Error (500) cannot perform GET request" });
     }
   });
+  
   
 
   // Use withAuth middleware to redirect authenticated users to the dashboard

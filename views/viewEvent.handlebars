@@ -6,10 +6,11 @@
     </div>
     <div class="col-md-8">
       <div class="card-body flex-wrap">
-        <h3>{{name}} Event Name</h3>
-        <p>{{description}} Event Description</p>
-        <p>{{ starting_date }} Start Date / End Date {{ ending_date }}</p>
-        <p>{{created_by}} Created By</p>
+<h3>{{event.name}}</h3>
+<p>{{event.description}}</p>
+<p>{{format_date event.starting_date }} Until {{format_date event.ending_date }}</p>
+<p> Created By User Id :{{event.created_by}}</p>
+
     </div>
      </div>
     </div>
