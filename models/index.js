@@ -1,4 +1,5 @@
 // References the models for this application
+// changing the name of the user folder to User.js to match the requirement for heroku -- from user.js to User.js
 const User = require("./User");
 const Event = require("./Event");
 const UserEvent = require("./UserEvent");
