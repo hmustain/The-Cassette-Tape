@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Event, Song, UserEvent, User } = require('../../models');
-const { create } = require('../../models/user');
+const { create } = require('../../models/User');
 
 
 // GET route to get list of songs
