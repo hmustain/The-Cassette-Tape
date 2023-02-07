@@ -5,9 +5,9 @@ const searchTracks = async (event) => {
     const limit = document.getElementById("track-limit").value;
 
     try {
-        console.log(`http://localhost:3001/api/tracks/search?q=${query}&type=${type}&limit=${limit}`);
+        console.log(`http://localhost:${process.env.PORT || 3001}/api/tracks/search?q=${query}&type=${type}&limit=${limit}`);
 
-        const response = await fetch(`http://localhost:3001/api/tracks/search?q=${query}&type=${type}&limit=${limit}`, {
+        const response = await fetch(`http://localhost:${process.env.PORT || 3001}/api/tracks/search?q=${query}&type=${type}&limit=${limit}`, {
             method: "GET"
         });
         const data = await response.json();
